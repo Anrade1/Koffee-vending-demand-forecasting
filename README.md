@@ -5,7 +5,7 @@ End-to-end analysis of coffee vending machine sales using EDA, machine learning,
 
 ---
 
-## 1. Define the Problem Statement
+#### Define the Problem Statement
 
 Coffee vending machine operators often rely on intuition rather than data to make decisions about inventory, product offerings, and restocking schedules. This can lead to overstocking low-demand products, stockouts during peak periods, and missed revenue opportunities.
 
@@ -13,7 +13,7 @@ The goal of this project is to analyze transaction-level sales data to uncover p
 
 ---
 
-## 2. Model Outcomes or Predictions
+#### Model Outcomes or Predictions
 
 This project primarily uses **regression models** to predict transaction revenue (`money`), making it a **supervised learning problem**.
 
@@ -28,34 +28,80 @@ Expected outputs:
 
 ---
 
-## 3. Data Acquisition
+#### Executive summary
 
-The dataset consists of coffee vending machine transaction data from March 2024 onward.
+This project analyzes coffee vending machine sales to understand customer purchasing behavior and identify patterns in demand. The analysis shows that sales are highly predictable based on time of day, day of the week, and product type.
 
-Key features include:
-- Product type (`coffee_name`)
-- Revenue (`money`)
-- Transaction date and time
-- Day of week and month
-
-The dataset provides sufficient granularity to analyze temporal patterns and customer behavior.
-
-Initial exploration included:
-- Inspecting dataset structure (`df.head()`, `df.info()`)
-- Evaluating distributions of key variables
-- Identifying patterns in time-based and product-based data
+By applying data analysis and forecasting techniques, this project demonstrates how vending operators can improve inventory planning, reduce waste, and increase revenue through more informed decision-making.
 
 ---
 
-## 4. Data Preprocessing / Preparation
+#### Rationale
 
-### a. Data Cleaning
-- Converted date and time fields into usable formats  
-- Extracted time-based features such as hour, day of week, and month  
-- Handled inconsistent time formatting by extracting hour directly from strings  
-- Removed missing or invalid records using `.dropna()`  
+Vending machine operators often rely on intuition to decide what products to stock and when to restock. This can lead to missed sales opportunities, overstocking, and inefficient operations.
 
-### b. Train/Test Split
-- Data was split into training and testing sets using an 80/20 split:
-```python
-train_test_split(X, y, test_size=0.2, random_state=42)
+Understanding customer behavior and demand patterns allows operators to make better decisions, improve efficiency, and provide a better customer experience.
+
+---
+
+#### Research Question
+
+What sales trends and customer purchasing patterns emerge from coffee vending machine transactions, and how can these insights be used to forecast demand and optimize product offerings?
+
+---
+
+#### Data Sources
+
+The dataset consists of transaction-level coffee vending machine sales data, including:
+
+- Product type (coffee_name)  
+- Revenue (money)  
+- Transaction date and time  
+- Day of the week and month  
+
+This data provides detailed insight into when purchases occur and how much customers spend.
+
+---
+
+#### Methodology
+
+To answer the research question, the following methods were used:
+
+- **Exploratory Data Analysis (EDA):**  
+  Identified patterns in sales by time of day, day of week, and product performance  
+
+- **Machine Learning Models:**  
+  Built regression models to predict revenue and understand key drivers of demand  
+
+- **Time Series Analysis:**  
+  Analyzed trends and seasonal patterns over time and generated short-term forecasts  
+
+- **Clustering:**  
+  Grouped transactions into segments to identify different types of customer behavior  
+
+---
+
+#### Results
+
+The analysis revealed several key insights:
+
+- Sales are highest during **weekday working hours (9 AM – 5 PM)**  
+- A small number of products drive the majority of revenue  
+- Demand follows consistent and repeatable patterns over time  
+- Predictive models can accurately forecast short-term demand  
+- Customer behavior can be segmented into different spending patterns  
+
+These findings show that vending machine sales are structured and predictable rather than random.
+
+---
+
+#### Next steps
+
+To further improve this analysis, the following steps are recommended:
+
+- Incorporate external data such as weather or foot traffic  
+- Test more advanced forecasting models  
+- Apply dynamic pricing or promotions based on demand patterns  
+- Deploy the model into a real-time inventory management system  
+
+---
